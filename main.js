@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const route = "http://api.forismatic.com/api/1.0/";
+  const route = "https://api.forismatic.com/api/1.0/";
 
   //   const reqString = `${route}method=getQuote&format=json&lang=en`;
 
