@@ -31,15 +31,20 @@ $(document).ready(function () {
   getNewQuote();
 
   const newColor = () => {
-    var r = Math.floor(Math.random() * 256);
-    var g = Math.floor(Math.random() * 256);
-    var b = Math.floor(Math.random() * 256);
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
 
+    // Ensure color is never white
     if (r === 255 && g === 255 && b === 255) {
       r = Math.floor(Math.random() * 255);
-      b = Math.floor(Math.random() * 255);
     }
-    return `rgb(${r}, ${g}, ${b})`;
+
+    return { r, g, b };
+  };
+
+  const getComplementaryColor = ({ r, g, b }) => {
+    return `rgb(${255 - r}, ${255 - g}, ${255 - b})`;
   };
 
   $(".get-quote").on("click", (e) => {
@@ -47,11 +52,14 @@ $(document).ready(function () {
     getNewQuote();
 
     let color = newColor();
-    $("#text").css("color", color);
-    $("#author").css("color", color);
-    $("body").css("background-color", color);
+    let mainColor = `rgb(${color.r}, ${color.g}, ${color.b})`;
+    let compColor = getComplementaryColor(color);
 
-    $("#quote-box").css("background-color", newColor());
+    $("#text").css("color", mainColor);
+    $("#author").css("color", mainColor);
+    $("body").css("background-color", mainColor);
+
+    $("#quote-box").css("background-color", compColor);
   });
 
   $(".share-quote").on("click", (e) => {
