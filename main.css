@@ -3,13 +3,13 @@ body {
     flex-direction: column;
     min-height: 100vh;
 
-    background-image: url(images/texture2.png);
+    /* background-image: url(images/texture2.png); */
     /* background-repeat: no-repeat; */
-    background-repeat: repeat;
+    /* background-repeat: repeat; */
     /* background-position: center; */
     /* background-size: cover; */
-    background-color: black;
-    border: 2px solid black;
+
+    background-color: whitesmoke;
 }
 
 body,
@@ -22,7 +22,11 @@ p {
 .container {
     text-align: center;
     padding-top: 50px;
-    width: 33%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     /* border: 1px dashed black; */
     flex: 1;
 }
@@ -31,11 +35,14 @@ hr {
     border-bottom: 1px solid black;
 }
 
+/* .box-container {
+} */
+
 #quote-box {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     box-shadow: 10px 10px 10.1 black;
     border-radius: 50px;
-    padding: 10px;
+    padding: 30px;
     background-color: white;
     margin-top: 20px;
     display: flex;
@@ -78,4 +85,12 @@ footer:hover {
 
 span {
     font-style: italic;
+}
+
+/* transition definitions */
+
+body,
+#text,
+#author {
+    transition: background-color 3s ease, color 2s ease;
 }

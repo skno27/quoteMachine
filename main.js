@@ -28,9 +28,37 @@ $(document).ready(function () {
       },
     });
   };
+  getNewQuote();
+
+  const newColor = () => {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+
+    if (r === 255 && g === 255 && b === 255) {
+      r = Math.floor(Math.random() * 255);
+      b = Math.floor(Math.random() * 255);
+    }
+    return `rgb(${r}, ${g}, ${b})`;
+  };
 
   $(".get-quote").on("click", (e) => {
     e.preventDefault();
     getNewQuote();
+
+    let color = newColor();
+    $("#text").css("color", color);
+    $("#author").css("color", color);
+    $("body").css("background-color", color);
+
+    $("#quote-box").css("background-color", newColor());
+  });
+
+  $(".share-quote").on("click", (e) => {
+    e.preventDefault();
+    window.open(
+      "https://twitter.com/intent/tweet?text=" +
+        encodeURIComponent(quote + `\n -` + author)
+    );
   });
 });
