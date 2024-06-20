@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    background-image: url(images/texture2.png);
+    /* background-repeat: no-repeat; */
+    background-repeat: repeat;
+    /* background-position: center; */
+    /* background-size: cover; */
+    background-color: black;
+    border: 2px solid black;
+}
+
+body,
+h1,
+h2,
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    text-align: center;
+    padding-top: 50px;
+    width: 33%;
+    /* border: 1px dashed black; */
+    flex: 1;
+}
+
+hr {
+    border-bottom: 1px solid black;
+}
+
+#quote-box {
+    border: 1px solid black;
+    box-shadow: 10px 10px 10.1 black;
+    border-radius: 50px;
+    padding: 10px;
+    background-color: white;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#text {
+    margin: 40px 0 20px 0;
+}
+
+#author {
+    margin-bottom: 10px;
+}
+
+.btns {
+    margin: 40px 0 40px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer {
+    height: 50px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer:hover {
+    background-color: red;
+}
+
+#outro {
+    font-size: smaller;
+    margin-top: 30px;
+}
+
+span {
+    font-style: italic;
+}
